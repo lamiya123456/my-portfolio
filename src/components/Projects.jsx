@@ -10,18 +10,13 @@ const Projects = () => {
       image: "https://i.postimg.cc/Y2yWjNj4/Screenshot-2025-06-30-095843.png",
       description:
         "BlogSphere is a modern blogging platform where users can write, read, comment, and save blog posts. It features user authentication, post management, filtering, wishlisting, and a responsive design for a smooth experience.",
-      shortFeatures: [
-        "React",
-        "Firebase Auth",
-        "Tailwind CSS",
-        "Protected Routes",
-      ],
+      shortFeatures: ["React", "Firebase Auth", "Tailwind CSS", "Protected Routes"],
       features: [
         "Secure login and registration system",
         "Easily write, edit, and delete blog posts.",
         "Find blogs by title, category, or author.",
         "Save favorite blogs for later reading.",
-        " Engage with authors through comments.",
+        "Engage with authors through comments.",
         "Fully mobile-friendly and accessible UI.",
         "Personalized dashboard for managing posts and interactions.",
         "Restricted access to certain pages based on authentication.",
@@ -45,15 +40,10 @@ const Projects = () => {
       image: "https://i.postimg.cc/DzgWhLtw/Screenshot-2025-06-30-095945.png",
       description:
         "HobbyHub is a vibrant platform where users can explore, share, and connect through hobbies. Create or join hobby groups, manage your activities, and discover like-minded people — all in one place.",
-      shortFeatures: [
-        "React",
-        "Firebase Auth",
-        "Tailwind CSS",
-        "Dashboard",
-      ],
+      shortFeatures: ["React", "Firebase Auth", "Tailwind CSS", "Dashboard"],
       features: [
         "Users can create groups based on their favorite hobbies.",
-        " Access to certain pages is restricted to logged-in users only.",
+        "Access to certain pages is restricted to logged-in users only.",
         "Secure login and registration for all users.",
         "View and manage the groups you've created or joined.",
         "Optimized for all devices with a clean and modern layout.",
@@ -94,22 +84,20 @@ const Projects = () => {
 
   return (
     <div id="projects" className="py-36 px-4 bg-base-100 min-h-screen">
-      <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-        Projects
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-primary">Projects</h2>
 
-      <div className="space-y-8  mx-auto">
+      <div className="space-y-8 mx-auto">
         {projectList.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col md:flex-row items-center gap-6 bg-base-200 rounded-2xl shadow-lg p-6"
+            className="flex flex-col md:flex-row items-stretch gap-6 bg-base-200 rounded-2xl shadow-lg p-6"
           >
             {/* Image Section */}
             <div className="md:w-1/2">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full rounded-xl"
+                className="w-full h-full rounded-xl"
               />
             </div>
 
@@ -120,13 +108,18 @@ const Projects = () => {
               </h2>
               <p className="text-base-content mb-4">{project.description}</p>
 
+              {/* ✅ Balanced Feature List (4 items) */}
+              <ul className="list-disc list-inside text-sm text-base-content mb-4 space-y-1">
+                <li>{project.features[0]}</li>
+                <li>{project.features[1]}</li>
+                <li>{project.features[2]}</li>
+                <li>{project.features[3]}</li>
+              </ul>
+
               {/* Tech Badges */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.shortFeatures.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className="badge badge-outline badge-primary"
-                  >
+                  <span key={idx} className="badge badge-outline badge-primary">
                     {item}
                   </span>
                 ))}
@@ -183,50 +176,40 @@ const Projects = () => {
             </h2>
             <p className="mb-6 text-base-content">{selectedProject.description}</p>
 
-            <h3 className="text-xl font-semibold mb-2 text-secondary">
-              Features
-            </h3>
+            <h3 className="text-xl font-semibold mb-2 text-secondary">Features</h3>
             <ul className="list-disc list-inside space-y-1 mb-6">
               {selectedProject.features.map((feature, idx) => (
                 <li key={idx}>{feature}</li>
               ))}
             </ul>
 
-            <h3 className="text-xl font-semibold mb-2 text-secondary">
-              Tech Stack
-            </h3>
+            <h3 className="text-xl font-semibold mb-2 text-secondary">Tech Stack</h3>
             <ul className="space-y-1 mb-6">
               <li>
-                <span className="font-semibold">Frontend:</span>{" "}
-                {selectedProject.techStack.frontend}
+                <span className="font-semibold">Frontend:</span> {selectedProject.techStack.frontend}
               </li>
               {selectedProject.techStack.auth && (
                 <li>
-                  <span className="font-semibold">Authentication:</span>{" "}
-                  {selectedProject.techStack.auth}
+                  <span className="font-semibold">Authentication:</span> {selectedProject.techStack.auth}
                 </li>
               )}
               {selectedProject.techStack.state && (
                 <li>
-                  <span className="font-semibold">State Management:</span>{" "}
-                  {selectedProject.techStack.state}
+                  <span className="font-semibold">State Management:</span> {selectedProject.techStack.state}
                 </li>
               )}
               {selectedProject.techStack.notifications && (
                 <li>
-                  <span className="font-semibold">Notifications:</span>{" "}
-                  {selectedProject.techStack.notifications}
+                  <span className="font-semibold">Notifications:</span> {selectedProject.techStack.notifications}
                 </li>
               )}
               {selectedProject.techStack.animations && (
                 <li>
-                  <span className="font-semibold">Animations:</span>{" "}
-                  {selectedProject.techStack.animations}
+                  <span className="font-semibold">Animations:</span> {selectedProject.techStack.animations}
                 </li>
               )}
               <li>
-                <span className="font-semibold">Deployment:</span>{" "}
-                {selectedProject.techStack.deployment}
+                <span className="font-semibold">Deployment:</span> {selectedProject.techStack.deployment}
               </li>
             </ul>
 
