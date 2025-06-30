@@ -56,7 +56,7 @@ const Hero = () => {
         <div className="flex-1  flex justify-end">
           <img
             src="https://i.postimg.cc/25MKCL5x/muslim-girl-avatar-arab-beautiful-woman-green-hijab-vector-fashion-young-icon-eps-illustration-78816.webp"
-            alt="mehedi"
+            alt="lamiya"
             className="w-72 cursor-pointer lg:w-96 h-72 lg:h-96 rounded-full border-4 border-primary shadow-lg opacity-30 hover:opacity-80 transition duration-500"
           />
         </div>
